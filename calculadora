@@ -1,0 +1,57 @@
+#include<stdio.h>
+
+void soma (int a, int b){
+    int result= a+b;
+    printf("Sua soma total sera:%d",result);
+} 
+
+void subtracao (int a, int b){
+    int result= a-b;
+    printf("Sua subtração sera:%d",result);
+}
+
+void multiplicacao (int a, int b){
+    int result= a*b;
+    printf("Sua multiplicação sera:%d", result);
+}
+
+void divisao (int a, int b){
+    int result= a/b;
+    printf("Sua divisão sera:%d",result);
+}
+
+int main (){
+    int op;
+    int v1;
+    int v2;
+   printf("Ecolha uma opição:\n 1-soma\n 2-subtração\n 3-multiplicação\n 4-divisão\n");
+   scanf("%d",&op);
+   
+   if (op==1){
+      printf("digite os valores\n");
+      scanf("%d,%d", &v1,&v2);
+       
+       soma(v1,v2);
+      
+   }else if(op==2){
+       printf("digite os valores\n");
+      scanf("%d,%d", &v1,&v2);
+      subtracao(v1,v2);
+      
+   }else if(op==3){
+       printf("digite os valores\n");
+      scanf("%d,%d", &v1,&v2);
+       multiplicacao(v1,v2);
+       
+   }else if(op==4){
+       printf("digite os valores\n");
+      scanf("%d,%d", &v1,&v2);
+       divisao(v1,v2);
+   
+   }else{
+       printf("erro");
+   }
+   
+   
+   
+}
