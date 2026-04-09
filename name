@@ -1,0 +1,47 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+    char nome [50];
+    char rua[80];
+    char telefone[10];
+    char cpf[20];
+    int op;
+
+ 
+
+void cadastrarpessoa(){
+    printf("nome:");
+    fgets(nome,50,stdin);
+    printf("CPF:");
+    fgets(cpf,20,stdin);
+    printf("Telefone:");
+    fgets(telefone,10,stdin);
+    printf("Rua:");
+    fgets(rua,80,stdin);
+}
+ void verpessoa(){
+     printf("pessoa: %s\n", nome);
+     printf("CPF:%d\n", cpf);
+     printf("Telefone:%d\n", telefone);
+     printf("Rua:%s\n", rua);
+ }
+ 
+
+int main() {
+    
+    while(1){
+    printf("Escolha uma opção por favor:\n1-cadastrar pessoa\n 2-ver pessoa\n");
+    scanf("%d", &op);
+    getchar();
+    
+    
+    if (op==1){
+        cadastrarpessoa();
+    }
+    
+    else{
+        verpessoa();
+    }
+}
+    return 0;
+}
