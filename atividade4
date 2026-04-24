@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int saldo= 500;
+
+void saque(int a) {
+	saldo=saldo - a;
+	printf("saldo atual: %d\n", saldo);
+}
+void deposito(int a) {
+	saldo=saldo +a;
+	printf("seu saldo atual:%d\n", saldo);
+}
+void verificar() {
+	printf("vocC* tem:%d\n", saldo);
+}
+
+int main() {
+	int op;
+	int valor;
+	printf("Escolha um opição\n 1-Saque \n 2-Deposito \n 3-Verificar \n 4-Sair \n");
+	scanf("%d",&op);
+
+	switch(op) {
+	case 1:
+		printf("Digite o quanto você quer sacar:");
+		scanf("%d", &valor);
+		saque(valor);
+
+	case 2:
+		printf("Digite o quanto quer depositar:");
+		scanf("%d", &valor);
+		deposito(valor);
+
+	case 3:
+		printf("Seu saldo atual:");
+		verificar(valor);
+
+	}
+}
