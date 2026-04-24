@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+char letra='A';
+int main() {
+	printf("Digite uma letra\n");
+	scanf("%c", &letra);
+	printf("%c", letra);
+	
+char letra= 'B';
+	printf("Digite uma letra\n");
+	scanf("%c", &letra);
+	printf("%c", letra);
+	
+char letra='C';
+	printf("Digite uma letra\n");
+	scanf("%c", &letra);
+	printf("%c", letra);
+	
+	
+switch (letra){
+case A:
+
+break;
+
+case B:
+
+break;
+
+case C:
+
+break;
+}
+}
