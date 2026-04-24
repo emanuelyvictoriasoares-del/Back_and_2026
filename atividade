@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+int saldo=500;
+
+void consulta (){
+	printf("Seu saldo:%d \n" ,saldo);
+}
+
+void desopito (int a, int b) {
+	int result= a-b;
+	printf("Sua subtração sera:%d",result);
+}
+
+void saque (int a, int b) {
+	int result= a*b;
+	printf("Sua multiplicação sera:%d", result);
+}
+
+void sair (int a, int b) {
+	int result= a/b;
+	printf("Sua divisão sera:%d",result);
+}
+
+int main () {
+	int op;
+	int v1;
+	int v2;
+
+	while(1) {
+		printf("Ecolha uma opição:\n 1-consulta\n 2-deposito\n 3-\n 4-divisão\n");
+		scanf("%d",&op);
+		printf("digite os valores\n");
+		scanf("%d %d", &v1,&v2);
+		system("clear");
+
+		switch(op) {
+		case 1:
+			soma(v1,v2);
+			break;
+
+		case 2:
+
+			subtracao(v1,v2);
+			break;
+
+		case 3:
+			multiplicacao(v1,v2);
+			break;
+
+		case 4:
+			divisao(v1,v2);
+			break;
+
+		}
+	}
+}
