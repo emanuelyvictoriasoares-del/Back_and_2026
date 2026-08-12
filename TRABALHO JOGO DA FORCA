@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <ctype.h>
+
+int main() {
+    srand(time(NULL));
+    int nrand = rand() % 7;
+    
+    char secreta[60];
+    char nome[7][60] = {"Attack on titan", "Demon Slayer", "Naruto", "Bleach", "Death Note", "Frieren", "One piece"};
+    char dica[7][58] = {"titã", "demonios", "renegados", "bankai", "caderno preto", "imortalidade", "tesouro"};
+    
+    char tentativa;
+    int tentativas_restantes = 7;
+    int tamanho = strlen(nome[nrand]);
+
+    printf("--- JOGO DA FORCA: ANIMES ---\n\n");
+    printf("Dica: %s\n", dica[nrand]);
+
+   
+    for (int i = 0; i < tamanho; i++) {
+        if (nome[nrand][i] == ' ') {
+            secreta[i] = ' ';
+        } else {
+            secreta[i] = '-';
+        }
+    }
+    secreta[tamanho] = '\0'; 
+
+    
+    while (tentativas_restantes > 0) {
+        printf("\nPalavra: %s\n", secreta);
+        printf("Tentativas restantes: %d\n", tentativas_restantes);
+        printf("Digite uma letra: ");
+        
+       
+        scanf(" %c", &tentativa); 
+        
+        
+        tentativa = tolower(tentativa);
+
+        int acertou_letra = 0;
+
+    
+        for (int y = 0; y < tamanho; y++) {
+           
+            if (tolower(nome[nrand][y]) == tentativa) {
+                secreta[y] = nome[nrand][y]; 
+                acertou_letra = 1;
+            }
+        }
+
+        
+        if (acertou_letra == 0) {
+            printf("Erro! A letra '%c' nao existe nesse anime.\n", tentativa);
+            tentativas_restantes--;
+        }
+
+        
+        if (strcasecmp(secreta, nome[nrand]) == 0) {
+            printf("\nParabens! Voce acertou o anime: %s\n", nome[nrand]);
+            printf("--- VOCE GANHOU! ---\n");
+            return 0; 
+    
+        }
+        
+    }
+
+
+    printf("\nVoce perdeu! A palavra correta era: %s\n", nome[nrand]);
+    return 0;
+}
